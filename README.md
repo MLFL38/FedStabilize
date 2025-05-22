@@ -3,7 +3,7 @@ Code for **FedStabilize**, a two-stage federated learning framework for robust t
 
 ---
 
-## 🔧 Training Examples
+## Training Examples
 
 ##### CIFAR-10 (Non-IID: `{p=0.3, α_dir=10}`, Noise level `{ρ=0.6, τ=0.5}`)
 ```bash
@@ -27,7 +27,6 @@ python3.10 main_clothing.py --dataset clothing1m --model resnet50 --pretrained -
 >  **Note for Clothing1M**  
 > In this experiment, noisy clients **use all their local data** and **apply confidence-based relabeling only to confidently predicted samples**  
 > This differs from the CIFAR setup (synthetic symmetric noise), and is better suited to real-world, instance-dependent noise characteristics in Clothing1M.
-
 
 
 
