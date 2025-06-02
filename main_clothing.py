@@ -162,8 +162,7 @@ if __name__ == '__main__':
         w_glob_fl = FedAvg(w_locals, dict_len)
         netglob.load_state_dict(copy.deepcopy(w_glob_fl))
 
-        #acc = globaltest(netglob, dataset_test, args)
-        acc = globaltest_cos_similarity(netglob, dataset_test, args)
+        acc = globaltest(netglob, dataset_test, args)
         if acc > best_acc:
             best_acc = acc
         f_acc.write("Stage 1 round %d, test acc %.4f \n" % (rnd, acc))
@@ -281,7 +280,7 @@ if __name__ == '__main__':
             w_glob_fl = FedAvg(w_locals, dict_locals)
             netglob.load_state_dict(copy.deepcopy(w_glob_fl))
 
-            acc = globaltest_cos_similarity(netglob, dataset_test, args)
+            acc = globaltest(netglob, dataset_test, args)
             f_acc.write("Stage 2 round %d, test acc %.4f \n" % (rnd, acc))
             f_acc.flush()
             writer.add_scalar('Accuracy', acc, rnd + args.rounds1)
