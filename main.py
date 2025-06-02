@@ -162,7 +162,6 @@ if __name__ == '__main__':
         w_glob_fl = FedAvg(w_locals, dict_len)
         netglob.load_state_dict(copy.deepcopy(w_glob_fl))
 
-        #acc = globaltest(netglob, dataset_test, args)
         acc = globaltest_cos_similarity(netglob, dataset_test, args)
         if acc > best_acc:
             best_acc = acc
