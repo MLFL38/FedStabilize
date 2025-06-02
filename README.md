@@ -25,8 +25,8 @@ python3.10 main.py --dataset cifar100 --model resnet34 --num_users 50 --non_iid_
 python3.10 main_clothing.py --dataset clothing1m --model resnet50 --pretrained --num_users 500 --non_iid_prob_class 0.7 --alpha_dirichlet 10 --frac 0.02 --level_n_system 0 --level_n_lowerb 0 --rounds1 50 --rounds2 100 --local_bs 16 --lr 0.001 --seed 1 --mixup --confidence_thres 0.6
 ```
 >  **Note for Clothing1M**  
-> In this experiment, noisy clients **use all their local data** and **apply confidence-based relabeling only to confidently predicted samples**  
-> This differs from the CIFAR setup (synthetic symmetric noise), and is better suited to real-world, instance-dependent noise characteristics in Clothing1M.
+> In this experiment, noisy clients **use all their local data** and **apply confidence-based relabeling only to confidently predicted samples**. 
+> Clothing1M contains real-world, instance-dependent noise. In such cases, even mislabeled examples can still be useful for generalization. Therefore, we retain all samples and avoid overcorrecting the data. Only high-confidence samples are relabeled to prevent introducing additional noise or bias from uncertain predictions.
 
 
 
