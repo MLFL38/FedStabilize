@@ -1,6 +1,6 @@
 # FedStabilize
 Code for **FedStabilize**, a two-stage federated learning framework for robust training under label noise and data heterogeneity. 
-This codebase builds upon the official implementation of [FedCorr](https://github.com/Xu-Jingyi/FedCorr), with additional modules for prototype-based feature alignment and confidence-based filtering.
+This codebase was initially adapted from the official implementation of [FedCorr](https://github.com/Xu-Jingyi/FedCorr), which has been restructured to implement the two-stage FedStabilize framework, including prototype-based feature alignment and confidence-aware sample filtering.
 
 ---
 
