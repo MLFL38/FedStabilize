@@ -14,13 +14,12 @@ def args_parser():
     parser.add_argument('--momentum', type=float, default=0.5, help="SGD momentum, default 0.5")
     
     # noise arguments
-    #parser.add_argument('--LID_k', type=int, default=20, help="lid")
     parser.add_argument('--level_n_system', type=float, default=0.4, help="fraction of noisy clients")
     parser.add_argument('--level_n_lowerb', type=float, default=0.5, help="lower bound of noise level")
 
     # correction
     parser.add_argument('--confidence_thres', type=float, default=0.5, help="threshold of model's confidence on each sample")
-    parser.add_argument('--clean_set_thres', type=float, default=0.1, help="threshold of estimated noise level to filter 'clean' set")
+    parser.add_argument('--clean_set_thres', type=float, default=0.1, help="threshold of noise level to consider client as 'clean' (groundtruth)")
 
 
     # other arguments
